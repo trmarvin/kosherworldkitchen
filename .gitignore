@@ -1,48 +1,70 @@
 # Wordpress - ignore core, configuration, examples, uploads and logs.
 # https://github.com/github/gitignore/blob/main/WordPress.gitignore
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# --- WordPress core ---
+wp-admin/
+wp-includes/
+index.php
+license.txt
+readme.html
+xmlrpc.php
 
-# Configuration
+# --- Configuration / environment ---
 wp-config.php
+wp-config-*.php
+.env
+*.env
+*.sql
+*.sql.gz
 
-# Example themes
-/wp-content/themes/twenty*/
+# --- Uploads, cache, and runtime data ---
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backups/
+wp-content/ai1wm-backups/
+wp-content/advanced-cache.php
+wp-content/object-cache.php
+wp-content/debug.log
+wp-content/*.log
 
-# Example plugin
-/wp-content/plugins/hello.php
+# --- Plugins ---
+# Ignore all plugins except your custom ones (pattern: kwk-*)
+wp-content/plugins/*
+!wp-content/plugins/kwk-*/
 
-# Uploads
-/wp-content/uploads/
+# --- Themes ---
+# Ignore all themes except your custom one (pattern: kwk-custom)
+wp-content/themes/*
+!wp-content/themes/kwk-custom/
 
-# Log files
+# --- MU-plugins (keep your custom ones) ---
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/*.php
+
+# --- Dependency dirs ---
+node_modules/
+vendor/
+
+# --- Local environment files ---
+.DS_Store
+Thumbs.db
+*.code-workspace
+.idea/
+.vscode/
 *.log
+*.tmp
+*.bak
 
-# htaccess
-/.htaccess
+# --- Local app (Local by Flywheel) artifacts ---
+app/sql/
+app/logs/
+app/conf/
+local.json
+*.sock
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# --- OS / misc ---
+*.swp
+*.swo
+*.zip
+*.tar.gz

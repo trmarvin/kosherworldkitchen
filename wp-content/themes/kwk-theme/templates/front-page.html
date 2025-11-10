@@ -1,0 +1,65 @@
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main id="main" class="wp-block-group">
+
+    <!-- Hero -->
+    <!-- wp:group {"style":{"spacing":{"padding":{"top":"3rem","bottom":"2rem"}},"color":{"background":"var(--wp--preset--color--paper)"}}, "layout":{"type":"constrained"}} -->
+    <div class="wp-block-group" style="padding-top:3rem;padding-bottom:2rem;">
+        <!-- wp:heading {"level":1} -->
+        <h1>Kosher World Kitchen</h1>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph -->
+        <p>Simple, delicious kosher recipes. Browse or search to get cooking.</p>
+        <!-- /wp:paragraph -->
+
+        <!-- Search -->
+        <!-- wp:search {"label":"Search recipes","showLabel":true,"buttonText":"Search"} /-->
+
+        <!-- CTA -->
+        <!-- wp:buttons -->
+        <!-- wp:button {"textAlign":"center"} -->
+        <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/recipes">Browse all
+                recipes</a></div>
+        <!-- /wp:button -->
+        <!-- /wp:buttons -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- Divider -->
+    <!-- wp:separator {"opacity":"css","className":"is-style-wide"} -->
+    <hr class="wp-block-separator has-css-opacity is-style-wide" />
+    <!-- /wp:separator -->
+
+    <!-- Latest recipes grid (assumes a "recipe" post type; change to "post" if needed) -->
+    <!-- wp:heading {"level":2} -->
+    <h2>Latest Recipes</h2>
+    <!-- /wp:heading -->
+
+    <!--
+    If you haven’t registered a recipe CPT yet, change "postType":"recipe" to "post" to preview.
+    The grid is server-rendered (good for SEO), with simple pagination.
+  -->
+    <!-- wp:query {"queryId":1,"query":{"perPage":6,"postType":"recipe","order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3}} -->
+    <!-- wp:post-template -->
+    <!-- Card -->
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <!-- wp:post-featured-image {"isLink":true,"align":"wide"} /-->
+    <!-- wp:post-title {"isLink":true,"level":3} /-->
+    <!-- wp:post-excerpt {"moreText":"Read more"} /-->
+    <!-- /wp:group -->
+    <!-- /Card -->
+    <!-- /wp:post-template -->
+
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+    <!-- wp:query-pagination-previous /-->
+    <!-- wp:query-pagination-numbers /-->
+    <!-- wp:query-pagination-next /-->
+    <!-- /wp:query-pagination -->
+    <!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer"} /-->

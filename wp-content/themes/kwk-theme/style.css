@@ -1,0 +1,32 @@
+/*
+Theme Name: KWK Block Theme
+Text Domain: kwk
+Version: 0.1.0
+Requires at least: 6.5
+Requires PHP: 8.0
+*/
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    padding: .5rem .75rem;
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    z-index: 9999
+}
+
+:focus-visible {
+    outline: 2px solid #2B4D3A;
+    outline-offset: 2px
+}
