@@ -1,17 +1,141 @@
 /*
-Theme Name: KWK Block Theme
+Theme Name: Kosher World Kitchen Block Theme
+Theme URI: https://kosherworldkitchen.com
+Author: Tamar Ron Marvin
+Author URI: https://trmarvin.org
 Text Domain: kwk
 Version: 0.1.0
 Requires at least: 6.5
-Requires PHP: 8.0
+Requires PHP: 8.1
 */
+
+/* ===========================
+   FONT IMPORTS
+   =========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karma:wght@100;300;400;500&display=swap");
+
+/* ===========================
+   BASE TYPOGRAPHY & BODY
+   =========================== */
+
+body {
+    background: var(--wp--preset--color--paper);
+    color: var(--wp--preset--color--ink-900);
+    font-family: var(--wp--preset--font-family--ui-sans, system-ui, sans-serif);
+}
+
+/* Headings: H1–H3 in Karma / serif-display */
+
+.wp-block-heading,
+.wp-block-post-title,
+h1,
+h2,
+h3 {
+    font-family: var(--wp--preset--font-family--serif-display, "Karma", "Times New Roman", serif);
+    font-weight: 100;
+}
+
+/* H4–H6 in Inter */
+
+h4,
+h5,
+h6 {
+    font-family: var(--wp--preset--font-family--ui-sans, system-ui, sans-serif);
+}
+
+/* ===========================
+   LINKS
+   =========================== */
+
+a {
+    color: var(--wp--preset--color--accent);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--wp--preset--color--brand);
+    text-decoration: underline;
+}
+
+/* Keep visited same as normal to avoid the purple default */
+a:visited {
+    color: var(--wp--preset--color--accent);
+}
+
+/* Navigation block links */
+
+.wp-block-navigation a {
+    color: var(--wp--preset--color--ink-900);
+}
+
+.wp-block-navigation a:hover,
+.wp-block-navigation a:focus {
+    color: var(--wp--preset--color--accent);
+    text-decoration: underline;
+}
+
+/* Site title link */
+
+.wp-block-site-title a {
+    color: var(--wp--preset--color--ink-900);
+}
+
+.wp-block-site-title a:hover,
+.wp-block-site-title a:focus {
+    color: var(--wp--preset--color--accent);
+    text-decoration: underline;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+.wp-element-button,
+.wp-block-button__link {
+    background: var(--wp--preset--color--brand);
+    border: 0;
+}
+
+.wp-element-button:hover,
+.wp-block-button__link:hover,
+.wp-element-button:focus,
+.wp-block-button__link:focus {
+    background: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--ink-900);
+}
+
+/* ===========================
+   LAYOUT HELPERS
+   =========================== */
+
+.wrap {
+    max-width: var(--wp--style--global--content-size);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+/* Constrain header content width */
+
+.site-header .wrap {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+/* ===========================
+   ACCESSIBILITY: SKIP LINK & FOCUS
+   =========================== */
+
 .skip-link {
     position: absolute;
     left: -9999px;
     top: auto;
     width: 1px;
     height: 1px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .skip-link:focus {
@@ -19,14 +143,114 @@ Requires PHP: 8.0
     top: 1rem;
     width: auto;
     height: auto;
-    padding: .5rem .75rem;
+    padding: 0.5rem 0.75rem;
     background: #fff;
     color: #000;
     border: 2px solid #000;
-    z-index: 9999
+    z-index: 9999;
 }
 
 :focus-visible {
     outline: 2px solid #2B4D3A;
-    outline-offset: 2px
+    outline-offset: 2px;
+}
+
+/* ===========================
+   CORE COLUMNS (fallback)
+   =========================== */
+
+.wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wp--style--block-gap, 2rem);
+}
+
+.wp-block-column {
+    flex: 1 1 0;
+    min-width: min(260px, 100%);
+}
+
+/* ===========================
+   KWK FOOTER LAYOUT
+   =========================== */
+
+.kwk-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kwk-footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.kwk-footer-col {
+    flex: 1 1 min(260px, 100%);
+}
+
+/* Titles / headings in footer */
+
+.kwk-footer-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.kwk-footer-heading {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+/* Text + links */
+
+.kwk-footer-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.kwk-footer-nav,
+.kwk-footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.kwk-footer-nav a,
+.kwk-footer-social a {
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.kwk-footer-nav a:hover,
+.kwk-footer-social a:hover {
+    text-decoration: underline;
+}
+
+/* Bottom line */
+
+.kwk-footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.kwk-footer-meta {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+/* Mobile tweaks */
+
+@media (max-width: 700px) {
+    .kwk-footer-inner {
+        flex-direction: column;
+    }
 }

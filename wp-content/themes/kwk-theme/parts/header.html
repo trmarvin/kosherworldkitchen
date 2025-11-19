@@ -1,6 +1,80 @@
-<!-- wp:group {"tagName":"header","style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}}}} -->
-<header class="wp-block-group">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <!-- wp:navigation {"overlayMenu":"never"} /-->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- wp:group {
+    "tagName":"header",
+    "align":"full",
+    "style":{
+        "spacing":{
+            "padding":{
+                "top":"var:preset|spacing|l",
+                "bottom":"var:preset|spacing|l",
+                "left":"var:preset|spacing|m",
+                "right":"var:preset|spacing|m"
+            }
+        },
+        "border":{
+            "bottom":{
+                "color":"var:preset|color|border-subtle",
+                "width":"1px",
+                "style":"solid"
+            }
+        }
+    },
+    "layout":{"type":"constrained"}
+} -->
+<header class="site-header" role="banner">
+    <!-- wp:group {
+        "layout":{
+            "type":"flex",
+            "justifyContent":"space-between",
+            "flexWrap":"nowrap",
+            "verticalAlignment":"center"
+        },
+        "className":"wrap kwk-header-inner"
+    } -->
+    <div class="wrap kwk-header-inner">
+        <!-- Left side: logo + title -->
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+        <div class="wp-block-group kwk-header-left">
+            <!-- wp:site-logo {"width":200,"shouldSyncIcon":true} /-->
+
+            <!-- wp:site-title {"level":1} /-->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- Right side: nav + search -->
+        <!-- wp:group {
+            "layout":{
+                "type":"flex",
+                "flexWrap":"nowrap",
+                "verticalAlignment":"center",
+                "justifyContent":"right"
+            },
+            "style":{
+                "spacing":{
+                    "blockGap":"var:preset|spacing|m"
+                }
+            }
+        } -->
+        <div class="wp-block-group kwk-header-right">
+            <!-- wp:navigation {
+                "overlayMenu":"mobile",
+                "ariaLabel":"Primary navigation",
+                "layout":{
+                    "type":"flex",
+                    "justifyContent":"right"
+                }
+            } /-->
+
+            <!-- wp:search {
+                "label":"Search recipes",
+                "showLabel":false,
+                "buttonUseIcon":true,
+                "style":{"border":{"radius":"999px"}}
+            } /-->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
 </header>
 <!-- /wp:group -->

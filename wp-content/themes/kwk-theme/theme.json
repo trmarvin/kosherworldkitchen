@@ -1,34 +1,148 @@
 {
-  "version": 2,
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+
   "settings": {
     "appearanceTools": true,
+
     "color": {
-      "defaultPalette": false,
-      "custom": false,
       "palette": [
-        { "name": "Brand",  "slug": "brand",  "color": "#2B4D3A" },
-        { "name": "Accent", "slug": "accent", "color": "#DDAA44" },
-        { "name": "Ink",    "slug": "ink",    "color": "#1E1E1E" },
-        { "name": "Paper",  "slug": "paper",  "color": "#FFFFFF" }
+        { "slug": "bg", "name": "BG", "color": "#1E242B" },
+        { "slug": "surface", "name": "Surface", "color": "#252C34" },
+        { "slug": "paper", "name": "Paper", "color": "#ffffff" },
+        { "slug": "ink-900", "name": "Ink (dark text)", "color": "#111111" },
+        { "slug": "muted", "name": "Muted", "color": "#A5B0BD" },
+        { "slug": "brand", "name": "Brand Teal", "color": "#2D8C85" },
+        { "slug": "accent", "name": "Accent Orange", "color": "#E57A2C" },
+        { "slug": "border-subtle", "name": "Border Subtle", "color": "#E0E5EC" }
       ]
     },
+
+    "spacing": {
+      "units": ["px", "rem"],
+      "spacingScale": { "steps": 8 },
+      "spacingSizes": [
+        { "slug": "m", "size": "1.5rem", "name": "Medium" },
+        { "slug": "l", "size": "2.5rem", "name": "Large" }
+      ]
+    },
+
+    "layout": {
+      "contentSize": "68ch",
+      "wideSize": "1200px"
+    },
+
     "typography": {
       "fluid": true,
-      "customFontSize": false,
+
+      "fontFamilies": [
+        {
+          "slug": "ui-sans",
+          "name": "Inter",
+          "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        },
+        {
+          "slug": "serif-display",
+          "name": "Karma",
+          "fontFamily": "Karma, Georgia, 'Times New Roman', serif"
+        }
+      ],
+
       "fontSizes": [
-        { "slug": "base", "size": "1rem", "name": "Base" },
-        { "slug": "xl",   "size": "1.25rem", "name": "XL" },
-        { "slug": "2xl",  "size": "1.5rem", "name": "2XL" }
+        { "slug": "xs",   "size": "0.875rem" },
+        { "slug": "sm",   "size": "0.95rem" },
+        { "slug": "base", "size": "1rem" },
+        { "slug": "lg",   "size": "1.125rem" },
+        { "slug": "xl",   "size": "1.25rem" },
+        { "slug": "2xl",  "size": "clamp(1.5rem, 1.2rem + 1.2vw, 2rem)" },
+        { "slug": "3xl",  "size": "clamp(2rem, 1.5rem + 2.2vw, 3rem)" }
       ]
-    },
-    "layout": { "contentSize": "720px", "wideSize": "1100px" }
-  },
-  "styles": {
-    "color": { "background": "var(--wp--preset--color--paper)", "text": "var(--wp--preset--color--ink)" },
-    "typography": { "lineHeight": "1.6" },
-    "elements": {
-      "heading": { "typography": { "lineHeight": "1.25", "fontWeight": "700" } },
-      "link": { "color": { "text": "var(--wp--preset--color--brand)" } }
     }
-  }
+  },
+
+  "styles": {
+    "color": {
+      "background": "var:preset|color|paper",
+      "text": "var:preset|color|ink-900"
+    },
+
+    "typography": {
+      "fontFamily": "var:preset|font-family|ui-sans",
+      "fontSize": "var:preset|font-size|base",
+      "lineHeight": "1.6"
+    },
+
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var:preset|color|accent"
+        }
+      }
+    },
+
+    "blocks": {
+
+      "core/navigation": {
+        "elements": {
+          "link": {
+            "color": { "text": "var:preset|color|ink-900" }
+          }
+        },
+        "typography": {
+          "fontFamily": "var:preset|font-family|ui-sans",
+          "fontSize": "var:preset|font-size|sm",
+          "letterSpacing": "0.08em"
+        }
+      },
+
+      "core/site-title": {
+        "elements": {
+          "link": {
+            "color": { "text": "var:preset|color|ink-900" }
+          }
+        },
+        "typography": {
+          "fontFamily": "var:preset|font-family|serif-display",
+          "fontSize": "var:preset|font-size|2xl",
+          "fontWeight": "600"
+        }
+      },
+
+      "core/heading": {
+        "color": {
+          "text": "var:preset|color|ink-900"
+        },
+        "typography": {
+          "fontFamily": "var:preset|font-family|serif-display"
+        }
+      },
+
+      "core/paragraph": {
+        "color": {
+          "text": "var:preset|color|ink-900"
+        }
+      }
+    }
+  },
+
+  "customTemplates": [
+    {
+      "name": "recipe-landing",
+      "title": "Recipe Landing",
+      "postTypes": ["page"]
+    }
+  ],
+
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Site Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Site Footer",
+      "area": "footer"
+    }
+  ]
 }

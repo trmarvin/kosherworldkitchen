@@ -1,22 +1,18 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main id="main" class="wp-block-group">
-    <!-- wp:heading {"level":1} -->
-    <h1>KWK Theme is Active</h1>
-    <!-- /wp:heading -->
+<!-- wp:group {"tagName":"main","className":"wrap","layout":{"type":"constrained"}} -->
+<main id="main" class="wrap">
+    <!-- wp:query {"queryId":1,"query":{"perPage":10,"postType":"post","order":"desc","orderBy":"date"}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template -->
+        <!-- wp:post-title {"isLink":true} /-->
+        <!-- wp:post-excerpt /-->
+        <!-- /wp:post-template -->
 
-    <!-- wp:query {"queryId":1,"query":{"perPage":6,"postType":"post"}} -->
-    <!-- wp:post-template -->
-    <!-- wp:group {"layout":{"type":"constrained"}} -->
-    <!-- wp:post-title {"isLink":true} /-->
-    <!-- wp:post-featured-image {"isLink":true,"width":"100%"} /-->
-    <!-- wp:post-excerpt /-->
-    <!-- /wp:group -->
-    <!-- /wp:post-template -->
-    <!-- wp:query-pagination /-->
+        <!-- wp:query-pagination /-->
+    </div>
     <!-- /wp:query -->
 </main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

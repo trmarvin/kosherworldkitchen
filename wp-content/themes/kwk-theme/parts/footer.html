@@ -1,9 +1,53 @@
-<!-- wp:group {"tagName":"footer","style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"}}}} -->
-<footer class="wp-block-group">
-    <!-- wp:paragraph {"align":"center"} -->
-    <p class="has-text-align-center">©
-        <script>document.write(new Date().getFullYear())</script> Kosher World Kitchen
-    </p>
-    <!-- /wp:paragraph -->
+<!-- wp:group {"tagName":"footer","align":"full","style":{
+"spacing":{
+  "padding":{
+    "top":"var:preset|spacing|xl",
+    "bottom":"var:preset|spacing|l",
+    "left":"var:preset|spacing|m",
+    "right":"var:preset|spacing|m"
+  },
+  "margin":{"top":"var:preset|spacing|xl"},
+  "border":{"top":{"color":"var:preset|color|border-subtle","width":"1px","style":"solid"}}
+}},"layout":{"type":"default"}} -->
+<!-- wp:html --> -->
+<footer class="kwk-footer" role="contentinfo">
+    <div class="kwk-footer-inner">
+        <div class="kwk-footer-col">
+            <div class="kwk-footer-title">Kosher World Kitchen</div>
+            <p class="kwk-footer-text">
+                Kosher & Jewish recipes from across the globe, plus kitchen nerdiness for real-life home cooks.
+            </p>
+        </div>
+
+        <div class="kwk-footer-col">
+            <div class="kwk-footer-heading">Quick links</div>
+            <nav class="kwk-footer-nav">
+                <a href="/">Home</a>
+                <a href="/recipes/">Recipes</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+
+        <div class="kwk-footer-col">
+            <div class="kwk-footer-heading">Stay in touch</div>
+            <div class="kwk-footer-social">
+                <!-- Replace with real URLs later -->
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Pinterest">Pinterest</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="kwk-footer-bottom">
+        <p class="kwk-footer-meta">
+            © <span class="year"></span> Kosher World Kitchen
+        </p>
+        <p class="kwk-footer-meta">
+            Site hand-crafted by Tamar Ron Marvin | Want me to custom build your site? <a href="https://dev.trmarvin.org">dev/trmarvin.org</a>
+        </p>
+    </div>
 </footer>
+<!-- /wp:html -->
 <!-- /wp:group -->

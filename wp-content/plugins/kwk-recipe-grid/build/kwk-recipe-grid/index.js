@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.wp.blocks,i=window.wp.blockEditor,o=window.ReactJSXRuntime;(0,e.registerBlockType)("kwk/recipe-grid",{edit:()=>(0,o.jsx)("div",{...(0,i.useBlockProps)(),children:"KWK Recipe Grid block is alive 🧁 (editor preview)"}),save:()=>null})})();
