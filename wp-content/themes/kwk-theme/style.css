@@ -254,3 +254,91 @@ a:visited {
         flex-direction: column;
     }
 }
+
+.kwk-grid {
+    display: grid;
+    gap: 1.75rem;
+}
+
+.kwk-grid--cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.kwk-grid--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.kwk-grid--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.kwk-grid--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Simple card layout */
+.kwk-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.kwk-card__image {
+    width: 100%;
+    border-radius: .75rem;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+}
+
+.kwk-card__title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Base card */
+.kwk-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Archive: normal */
+.kwk-card--archive {}
+
+/* Inline: more “promo” style */
+.kwk-card--inline {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Search: compact, border-bottom list feel */
+.kwk-card--search {
+    padding: 0.75rem 0;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.kwk-grid-filters {
+    margin-bottom: 1.5rem;
+}
+
+.kwk-grid-filters__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.kwk-grid-filters__field {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+}
+
+.kwk-grid-filters__actions button {
+    padding: 0.5rem 1rem;
+}

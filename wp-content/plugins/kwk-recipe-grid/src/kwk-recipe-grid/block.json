@@ -7,7 +7,50 @@
   "icon": "grid-view",
   "description": "Custom recipe grid for Kosher World Kitchen.",
   "supports": {
-    "html": false
+    "html": false,
+		"align": [ "wide", "full" ]
+  },
+    "attributes": {
+			"variant": {
+				"type": "string",
+				"default": "archive"
+			},
+			"columns": {
+				"type": "number",
+				"default": 3
+			},
+			"postsToShow": {
+				"type": "number",
+				"default": 6
+			},
+			"order": {
+				"type": "string",
+				"default": "desc"
+			},
+			"orderBy": {
+				"type": "string",
+				"default": "date"
+			},
+			"useGlobalQuery": {
+				"type": "boolean",
+				"default": false
+			},
+			"categories": {
+				"type": "string",
+				"default": ""
+			},
+			"showCategoryFilter": {
+				"type": "boolean",
+				"default": true
+			},
+			"showTagFilter": {
+				"type": "boolean",
+				"default": false
+			},
+			"showIngredientFilter": {
+				"type": "boolean",
+				"default": false
+			}
   },
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css"
